@@ -1,0 +1,62 @@
+﻿
+
+@{
+    ViewData["Title"] = "Urunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model List<Product>
+<br />
+<h1>Ürünler</h1>
+
+@if (TempData["status"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["status"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Açıklama</th>
+            <th>Stok Durumu</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+                <td>@item.Description</td>
+                <td>@item.IsStock</td>
+                <td>
+
+                    <button class="btn btn-success" type="submit">
+
+                        <a asp-controller="Sepet" asp-action="SepeteEkle" style="color:white" asp-route-id="@item.">Sepete ekle</a>
+
+                    </button>
+                    <button class="btn btn-success" type="submit">
+
+                        <a asp-controller="Sepet" asp-action="SepettenCikar" style="color:white" asp-route-id="@item.Id">Sepetten çıkar</a>
+
+                    </button>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

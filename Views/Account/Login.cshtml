@@ -1,0 +1,26 @@
+﻿
+
+<h1>Login</h1>
+@model UserModel
+
+<h2>Login</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label for="username">Kullanıcı Adı:</label>
+        <input placeholder="admin" type="text" id="username" name="Username" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="password">Parola:</label>
+        <input placeholder="12345" type="password" id="password" name="Password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Giriş</button>
+</form>
+

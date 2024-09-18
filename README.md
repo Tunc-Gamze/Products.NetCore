@@ -56,7 +56,7 @@ Bu klasörde, kullanıcıya sunulan görünümler yer alır:
 Projeyi çalıştırmak için şu adımları izleyin:
 1. Projeyi bilgisayarınıza klonlayın:  
    ```bash
-   git clone https://github.com/username/Products.NetCore.git
+   git clone https://github.com/Tunc-Gamze/Products.NetCore.git
    ```
 
 2. Gerekli bağımlılıkları yükleyin:  
